@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/first.css" %}">
+</head>
+<body>
+     <h1> This is my first ever template in django</h1>
+    <a href="https://phitron.io">this is a link</a> 
+    {% static "images/fire.PNG" as nature %}
+    <img src="{{nature}}" alt="Nature Nature">
+    {% comment %} <img src="{% static 'images/fire.PNG'%}" alt="Nature Image"/> {% endcomment %}
+    <img src="{%get_static_prefix%}images/fire_1.PNG" alt="fire image">
+    <script src={% static "js/index.js" %}></script>
+</body>
+</html>

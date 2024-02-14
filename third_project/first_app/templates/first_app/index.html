@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "first_app/css/first.css" %}">
+  </head>
+  <body>
+    <h1>We are inside app</h1>
+    <h1>Author name: {{name}}</h1>
+    <img src="{% static "first_app/images/img_1.PNG" %}" alt="image of man ">
+
+    {% comment %} {% if 'age>=18' %}
+    <p>vai tumi driving license nite parba</p>
+    {% else %}
+    <p>tumi ekta shishu</p>
+    {% endif %} {% endcomment %}
+    {% comment %} {% if marks >= 80 %}
+    <p>vai tumi golden a+ paiso</p>
+    {% elif marks >= 70 and marks <= 79 %}
+    <p>vai tumi a paiso</p>
+    {% elif marks >= 40 and marks <= 69 %}
+    <p>you are passed</p>
+    {% else %}
+    <p>You failed</p>
+    {% endif %} {% endcomment %}
+
+    {% comment %} <table border="1" width = 500>
+      <tr>
+        <th>ID</th>
+        <th>Course</th>
+        <th>Teacher</th>
+      </tr>
+
+      
+        {% for i in courses  %}
+          <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.course}}</td>
+            <td>{{i.teacher}}</td>
+          </tr>
+        {% endfor %}
+        <table></table>
+          <p></p>
+    </table> {% endcomment %}
+
+
+  <!--Filters in DTL-->
+ 
+  <!--1."Add value"-->
+    <h1>{{marks|add:"2"}}</h1>
+
+  <!--Divisible Check-->
+  <h1>{{marks | divisibleby:"3"}}</h1>
+  <h1>{{marks | divisibleby:"2"}}</h1>
+
+  <!--length-->
+   <h1>{{name | length}}</h1>
+   <!--wordcount-->
+   <h1>{{name| wordcount}}</h1>
+   <!--Truncate words-->
+   <h1>{{blog | truncatewords:"5" }}</h1>
+   <h1>{{blog | truncatechars:"6"}}</h1>
+
+   <!--Make List-->
+   <h1>{{name | make_list}}</h1>
+
+   <!--upper case-->
+   <h1>{{name |upper}}</h1>
+
+   <!--Lower case-->
+   <h1>{{name |lower}}</h1>
+   <!--JOIN-->
+   <h1>{{Lst |join:"/ "}}</h1>
+  </body>
+</html>
